@@ -63,9 +63,9 @@ const RequestQuote: React.FC = () => {
             Share a few details and we&apos;ll reach out with a recommended repair plan, availability, and pricing options.
             We typically respond within one business hour during the day.
           </p>
-          <div className="card" style={{ background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.25))' }}>
+          <div className="card" style={{ background: 'linear-gradient(135deg, rgba(243, 156, 18, 0.15), rgba(44, 62, 80, 0.65))' }}>
             <h2 style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>What to expect next</h2>
-            <ul style={{ display: 'grid', gap: '0.75rem', color: 'var(--muted)', paddingLeft: '1.25rem' }}>
+            <ul style={{ display: 'grid', gap: '0.75rem', color: 'rgba(236, 240, 241, 0.75)', paddingLeft: '1.25rem' }}>
               <li>We&apos;ll review your request and confirm any additional details we need.</li>
               <li>Receive a text or email with a diagnostic plan and upfront estimate.</li>
               <li>Approve the work digitally and pick a time that works around your schedule.</li>
@@ -175,7 +175,7 @@ const RequestQuote: React.FC = () => {
             </button>
 
             {hasSubmitted ? (
-              <p className="helper-text" style={{ color: 'var(--secondary)' }}>
+              <p className="helper-text" style={{ color: 'var(--accent)' }}>
                 Thanks! We&apos;ve received your information and will reach out soon.
               </p>
             ) : null}

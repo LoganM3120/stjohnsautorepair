@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="container footer__content">
         <div className="footer__brand">
           St. John&apos;s Auto Repair
-          <p className="helper-text" style={{ color: '#cbd5f5', marginTop: '0.5rem' }}>
+          <p className="helper-text" style={{ color: 'rgba(236, 240, 241, 0.75)', marginTop: '0.5rem' }}>
             Keeping Jacksonville drivers safely on the road.
           </p>
         </div>

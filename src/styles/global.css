@@ -2,13 +2,15 @@
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background-color: #f8fafc;
-  --primary: #0f172a;
-  --secondary: #2563eb;
-  --accent: #facc15;
-  --muted: #475569;
-  --light: #e2e8f0;
+  color: var(--text);
+  background-color: var(--primary);
+  --primary: #545454;
+  --secondary: #2c3e50;
+  --accent: #f39c12;
+  --text: #ecf0f1;
+  --muted: #c8d0d6;
+  --light: #f8f9fa;
+  --surface: #3a4b58;
   --max-width: 1200px;
 }
 
@@ -20,6 +22,7 @@
 
 body {
   min-height: 100vh;
+  background: linear-gradient(160deg, #5c5c5c, #2c3e50 65%);
 }
 
 a {
@@ -55,16 +58,16 @@ main {
   justify-content: center;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, var(--secondary), #1d4ed8);
-  color: white;
+  background: linear-gradient(135deg, var(--accent), #d98206);
+  color: var(--text);
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.35);
 }
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 24px rgba(243, 156, 18, 0.45);
 }
 
 .section {
@@ -72,8 +75,8 @@ main {
 }
 
 .section--dark {
-  background: var(--primary);
-  color: #f8fafc;
+  background: var(--secondary);
+  color: var(--text);
 }
 
 .section__title {
@@ -83,12 +86,12 @@ main {
 }
 
 .section__subtitle {
-  color: var(--muted);
+  color: rgba(236, 240, 241, 0.75);
   margin-bottom: 2rem;
 }
 
 .section--dark .section__subtitle {
-  color: #cbd5f5;
+  color: rgba(248, 249, 250, 0.8);
 }
 
 .grid {
@@ -103,11 +106,12 @@ main {
 }
 
 .card {
-  background: white;
+  background: rgba(44, 62, 80, 0.85);
   border-radius: 1rem;
   padding: 1.75rem;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 20px 40px rgba(12, 18, 24, 0.4);
+  border: 1px solid rgba(236, 240, 241, 0.08);
+  color: var(--text);
 }
 
 .badge {
@@ -116,8 +120,8 @@ main {
   gap: 0.5rem;
   padding: 0.5rem 0.875rem;
   border-radius: 9999px;
-  background: rgba(37, 99, 235, 0.1);
-  color: var(--secondary);
+  background: rgba(243, 156, 18, 0.15);
+  color: var(--accent);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -149,25 +153,31 @@ select {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(236, 240, 241, 0.15);
   font: inherit;
-  background: white;
+  background: rgba(248, 249, 250, 0.08);
+  color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(236, 240, 241, 0.45);
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.15);
 }
 
 label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--primary);
+  color: var(--text);
 }
 
 form {
@@ -178,12 +188,12 @@ form {
 
 .helper-text {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: rgba(236, 240, 241, 0.65);
 }
 
 .footer {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--secondary);
+  color: var(--text);
   padding: 2.5rem 0;
 }
 
@@ -201,13 +211,13 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  color: #cbd5f5;
+  color: rgba(236, 240, 241, 0.7);
   font-size: 0.95rem;
 }
 
 .footer__note {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: rgba(236, 240, 241, 0.55);
 }
 
 @media (min-width: 768px) {
@@ -221,6 +231,11 @@ form {
   position: relative;
   padding-bottom: 0.25rem;
   transition: color 0.2s ease;
+  color: rgba(236, 240, 241, 0.75);
+}
+
+.nav-link:hover {
+  color: var(--text);
 }
 
 .nav-link--active::after,
@@ -232,11 +247,11 @@ form {
   width: 100%;
   height: 0.2rem;
   border-radius: 9999px;
-  background: var(--secondary);
+  background: var(--accent);
 }
 
 .nav-link--active {
-  color: var(--secondary) !important;
+  color: var(--accent) !important;
 }
 
 .nav-link--mobile {
