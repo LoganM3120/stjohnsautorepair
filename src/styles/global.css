@@ -276,6 +276,12 @@ form {
   display: none;
 }
 
+.header__menu-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 @media (min-width: 768px) {
   header .button.nav--desktop {
     display: inline-flex !important;
@@ -286,7 +292,7 @@ form {
     align-items: center;
   }
 
-  header button[aria-label="Toggle navigation menu"] {
+  .header__menu-button {
     display: none;
   }
 }
