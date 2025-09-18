@@ -35,31 +35,14 @@ const Header: React.FC = () => {
         <Link
           to="/"
           onClick={closeMenu}
-          style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+          style={{ display: "flex", alignItems: "center" }}
+          aria-label="St. John&apos;s Auto Repair home"
         >
-          <span
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "2.75rem",
-              height: "2.75rem",
-              borderRadius: "9999px",
-              background: "linear-gradient(135deg, var(--secondary), #1d4ed8)",
-              color: "white",
-              fontWeight: 700,
-            }}
-          >
-            SJ
-          </span>
-          <div>
-            <p style={{ fontWeight: 700, fontSize: "1.1rem", lineHeight: 1.1 }}>
-              St. John&apos;s Auto Repair
-            </p>
-            <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-              Trusted Mobile Mechanic in Jacksonville
-            </p>
-          </div>
+          <img
+            src="/images/saint_johns_logo_nav.png"
+            alt="St. John&apos;s Auto Repair"
+            style={{ height: "3rem", width: "auto" }}
+          />
         </Link>
 
         <nav
@@ -98,14 +81,12 @@ const Header: React.FC = () => {
           type="button"
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
+          className="header__menu-button"
           style={{
             background: "white",
             border: "1px solid rgba(148, 163, 184, 0.4)",
             borderRadius: "0.75rem",
             padding: "0.5rem 0.75rem",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.35rem",
           }}
         >
           <span
