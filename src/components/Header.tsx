@@ -41,41 +41,46 @@ const Header: React.FC = () => {
           <img
             src="/images/saint_johns_logo_nav.png"
             alt="St. John&apos;s Auto Repair"
-            style={{ height: "3rem", width: "auto" }}
+            style={{ height: "4.5rem", width: "auto" }}
           />
         </Link>
 
-        <nav
-          style={{ display: "none", gap: "1.5rem" }}
+        <div
           className="nav--desktop"
+          style={{ display: "none", alignItems: "center", gap: "1.5rem" }}
         >
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                ["nav-link", isActive ? "nav-link--active" : undefined]
-                  .filter(Boolean)
-                  .join(" ")
-              }
-              style={{
-                fontWeight: 600,
-                color: "var(--muted)",
-              }}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
+          <nav
+            style={{ display: "none", gap: "1.5rem" }}
+            className="nav--desktop"
+          >
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  ["nav-link", isActive ? "nav-link--active" : undefined]
+                    .filter(Boolean)
+                    .join(" ")
+                }
+                style={{
+                  fontWeight: 600,
+                  color: "var(--muted)",
+                }}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        <Link
-          to="/request-quote"
-          className="button nav--desktop"
-          style={{ display: "none" }}
-        >
-          Schedule Service
-        </Link>
+          <Link
+            to="/request-quote"
+            className="button nav--desktop"
+            style={{ display: "none" }}
+          >
+            Schedule Service
+          </Link>
+        </div>
 
         <button
           type="button"
