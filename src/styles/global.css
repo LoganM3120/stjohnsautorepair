@@ -1,5 +1,11 @@
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--text);
@@ -61,7 +67,9 @@ main {
   background: linear-gradient(135deg, var(--accent), #d98206);
   color: var(--text);
   font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 8px 20px rgba(243, 156, 18, 0.35);
 }
 
@@ -157,7 +165,9 @@ select {
   font: inherit;
   background: rgba(248, 249, 250, 0.08);
   color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 input::placeholder,
@@ -240,7 +250,7 @@ form {
 
 .nav-link--active::after,
 .nav-link:hover::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -0.35rem;
@@ -276,7 +286,7 @@ form {
     align-items: center;
   }
 
-  header button[aria-label='Toggle navigation menu'] {
+  header button[aria-label="Toggle navigation menu"] {
     display: none;
   }
 }

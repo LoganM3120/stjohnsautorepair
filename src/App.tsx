@@ -1,9 +1,9 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import RequestQuote from './pages/RequestQuote';
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import RequestQuote from "./pages/RequestQuote";
 
 const App: React.FC = () => {
   return (
