@@ -1,16 +1,42 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-];
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+] as const;
 
-const Header: React.FC = () => {
+const normalizePath = (path: string) => {
+  if (path === "/") {
+    return "/";
+  }
+
+  return path.replace(/\/+$/, "");
+};
+
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const normalizedPath = normalizePath(pathname);
 
   const toggleMenu = () => setIsMenuOpen((open) => !open);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const isLinkActive = (href: string) => {
+    const normalizedHref = normalizePath(href);
+
+    if (normalizedHref === "/") {
+      return normalizedPath === "/";
+    }
+
+    return (
+      normalizedPath === normalizedHref ||
+      normalizedPath.startsWith(`${normalizedHref}/`)
+    );
+  };
 
   return (
     <header
@@ -33,14 +59,14 @@ const Header: React.FC = () => {
         }}
       >
         <Link
-          to="/"
+          href="/"
           onClick={closeMenu}
           style={{ display: "flex", alignItems: "center" }}
-          aria-label="St. John&apos;s Auto Repair home"
+          aria-label="St. John's Auto Repair home"
         >
           <img
             src="/images/saint_johns_logo_nav.png"
-            alt="St. John&apos;s Auto Repair"
+            alt="St. John's Auto Repair"
             style={{ height: "4.5rem", width: "auto" }}
           />
         </Link>
@@ -52,29 +78,37 @@ const Header: React.FC = () => {
           <nav
             style={{ display: "none", gap: "1.5rem" }}
             className="nav--desktop"
+            aria-label="Primary"
           >
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  ["nav-link", isActive ? "nav-link--active" : undefined]
-                    .filter(Boolean)
-                    .join(" ")
-                }
-                style={{
-                  fontWeight: 600,
-                  color: "var(--muted)",
-                }}
-              >
-                {link.label}
-              </NavLink>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.href);
+              const className = [
+                "nav-link",
+                active ? "nav-link--active" : undefined,
+              ]
+                .filter(Boolean)
+                .join(" ");
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={className}
+                  aria-current={active ? "page" : undefined}
+                  style={{
+                    fontWeight: 600,
+                    color: "var(--muted)",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <Link
-            to="/about"
+            href="/about"
             className="button nav--desktop"
             style={{ display: "none" }}
           >
@@ -87,6 +121,8 @@ const Header: React.FC = () => {
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
           className="header__menu-button"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
           style={{
             background: "white",
             border: "1px solid rgba(148, 163, 184, 0.4)",
@@ -132,6 +168,7 @@ const Header: React.FC = () => {
 
       {isMenuOpen ? (
         <div
+          id="mobile-navigation"
           style={{
             borderTop: "1px solid rgba(148, 163, 184, 0.15)",
             background: "rgba(248, 250, 252, 0.98)",
@@ -146,29 +183,33 @@ const Header: React.FC = () => {
               paddingBottom: "1.5rem",
             }}
           >
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  [
-                    "nav-link nav-link--mobile",
-                    isActive ? "nav-link--active" : undefined,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")
-                }
-                style={{
-                  fontWeight: 600,
-                  padding: "0.75rem 0",
-                  borderBottom: "1px solid rgba(148, 163, 184, 0.15)",
-                }}
-              >
-                {link.label}
-              </NavLink>
-            ))}
-            <Link to="/about" className="button" onClick={closeMenu}>
+            {navLinks.map((link) => {
+              const active = isLinkActive(link.href);
+              const className = [
+                "nav-link nav-link--mobile",
+                active ? "nav-link--active" : undefined,
+              ]
+                .filter(Boolean)
+                .join(" ");
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={className}
+                  aria-current={active ? "page" : undefined}
+                  style={{
+                    fontWeight: 600,
+                    padding: "0.75rem 0",
+                    borderBottom: "1px solid rgba(148, 163, 184, 0.15)",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+            <Link href="/about" className="button" onClick={closeMenu}>
               Request a Quote
             </Link>
           </div>
@@ -176,6 +217,4 @@ const Header: React.FC = () => {
       ) : null}
     </header>
   );
-};
-
-export default Header;
+}

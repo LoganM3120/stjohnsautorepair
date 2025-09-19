@@ -1,14 +1,77 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
-const Home: React.FC = () => {
+const serviceHighlights = [
+  {
+    title: "Diagnostics & Electrical",
+    subtitle: "Pinpoint issues quickly with advanced scan tools",
+    icon: "01",
+    points: [
+      "On-site computer diagnostics",
+      "Battery, starter, and alternator repairs",
+      "Electrical troubleshooting & wiring repairs",
+    ],
+  },
+  {
+    title: "Engine & Drivetrain",
+    subtitle: "Complete engine services without the shop wait times",
+    icon: "02",
+    points: [
+      "Timing belts and water pumps",
+      "Fuel system service & tune-ups",
+      "Transmission maintenance & fluid service",
+    ],
+  },
+  {
+    title: "Brakes & Suspension",
+    subtitle: "Stop safely with premium components and expert installation",
+    icon: "03",
+    points: [
+      "Brake pad & rotor replacement",
+      "ABS system diagnostics",
+      "Shocks, struts, and suspension components",
+    ],
+  },
+  {
+    title: "Fleet & Commercial",
+    subtitle: "Keep your business vehicles on the road with flexible scheduling",
+    icon: "04",
+    points: [
+      "Fleet maintenance programs",
+      "DOT inspections & documentation",
+      "After-hours and weekend availability",
+    ],
+  },
+] as const;
+
+const valueProps = [
+  {
+    title: "Certified expertise at your driveway",
+    description:
+      "Over 12 years of experience with domestic and import vehicles, backed by ASE Master certification.",
+    icon: "✓",
+  },
+  {
+    title: "Transparent, upfront pricing",
+    description:
+      "Digital estimates with labor and part breakdowns. Approve work from your phone before we turn a wrench.",
+    icon: "$",
+  },
+  {
+    title: "Mobile-first experience",
+    description:
+      "SMS updates, photo reports, and secure online payments keep you in control even while you're on the go.",
+    icon: "📱",
+  },
+] as const;
+
+export default function HomePage() {
   return (
     <div>
       <section className="section" style={{ paddingTop: "5rem" }}>
         <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
           <div className="stack">
             <span className="badge">
-              Mobile Auto Care · Jacksonville & St. Johns County
+              Mobile Auto Care · Jacksonville &amp; St. Johns County
             </span>
             <h1
               className="section__title"
@@ -23,7 +86,7 @@ const Home: React.FC = () => {
               times, transparent pricing, and guaranteed workmanship.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <Link to="/about" className="button">
+              <Link href="/about" className="button">
                 Request a Quote
               </Link>
               <a
@@ -97,9 +160,9 @@ const Home: React.FC = () => {
                 Roadside-ready service
               </h2>
               <p style={{ color: "rgba(226, 232, 240, 0.9)" }}>
-                Whether you&apos;re at home, at work, or stranded in a parking
-                lot, St. John&apos;s Auto Repair brings the shop to you with
-                fully equipped mobile diagnostics and repair tools.
+                Whether you're at home, at work, or stranded in a parking lot,
+                St. John's Auto Repair brings the shop to you with fully
+                equipped mobile diagnostics and repair tools.
               </p>
             </div>
             <div style={{ display: "grid", gap: "1rem" }}>
@@ -237,7 +300,7 @@ const Home: React.FC = () => {
         >
           <div className="card" style={{ order: 2 }}>
             <h2 className="section__title" style={{ fontSize: "2rem" }}>
-              Why drivers choose St. John&apos;s Auto Repair
+              Why drivers choose St. John's Auto Repair
             </h2>
             <div className="stack">
               {valueProps.map((value) => (
@@ -294,7 +357,7 @@ const Home: React.FC = () => {
                 within hours. We bring factory-grade tools and OEM-quality parts
                 directly to you, eliminating the need for a tow.
               </p>
-              <Link to="/about" className="button">
+              <Link href="/about" className="button">
                 Get a personalized repair plan
               </Link>
             </div>
@@ -303,71 +366,4 @@ const Home: React.FC = () => {
       </section>
     </div>
   );
-};
-
-const serviceHighlights = [
-  {
-    title: "Diagnostics & Electrical",
-    subtitle: "Pinpoint issues quickly with advanced scan tools",
-    icon: "01",
-    points: [
-      "On-site computer diagnostics",
-      "Battery, starter, and alternator repairs",
-      "Electrical troubleshooting & wiring repairs",
-    ],
-  },
-  {
-    title: "Engine & Drivetrain",
-    subtitle: "Complete engine services without the shop wait times",
-    icon: "02",
-    points: [
-      "Timing belts and water pumps",
-      "Fuel system service & tune-ups",
-      "Transmission maintenance & fluid service",
-    ],
-  },
-  {
-    title: "Brakes & Suspension",
-    subtitle: "Stop safely with premium components and expert installation",
-    icon: "03",
-    points: [
-      "Brake pad & rotor replacement",
-      "ABS system diagnostics",
-      "Shocks, struts, and suspension components",
-    ],
-  },
-  {
-    title: "Fleet & Commercial",
-    subtitle:
-      "Keep your business vehicles on the road with flexible scheduling",
-    icon: "04",
-    points: [
-      "Fleet maintenance programs",
-      "DOT inspections & documentation",
-      "After-hours and weekend availability",
-    ],
-  },
-];
-
-const valueProps = [
-  {
-    title: "Certified expertise at your driveway",
-    description:
-      "Over 12 years of experience with domestic and import vehicles, backed by ASE Master certification.",
-    icon: "✓",
-  },
-  {
-    title: "Transparent, upfront pricing",
-    description:
-      "Digital estimates with labor and part breakdowns. Approve work from your phone before we turn a wrench.",
-    icon: "$",
-  },
-  {
-    title: "Mobile-first experience",
-    description:
-      "SMS updates, photo reports, and secure online payments keep you in control even while you&apos;re on the go.",
-    icon: "📱",
-  },
-];
-
-export default Home;
+}
