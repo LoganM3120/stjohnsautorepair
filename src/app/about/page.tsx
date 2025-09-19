@@ -3,19 +3,19 @@ import type { Metadata } from "next";
 const testimonials = [
   {
     quote:
-      "Lindon rescued us when our SUV wouldn't start before a family trip. He arrived within the hour, diagnosed the issue immediately, and had us back on the road that afternoon.",
+      "Lindon rescued us when our SUV wouldn’t start before a family trip. He arrived within the hour, diagnosed the issue immediately, and had us back on the road that afternoon.",
     name: "Kara M.",
     detail: "Battery & alternator replacement",
   },
   {
     quote:
-      "I manage a small delivery fleet and rely on St. John's Auto Repair for fast, honest service. Lindon keeps every vehicle running without disrupting our schedule.",
+      "I manage a small delivery fleet and rely on St. John’s Auto Repair for fast, honest service. Lindon keeps every vehicle running without disrupting our schedule.",
     name: "Devon R.",
     detail: "Fleet maintenance client",
   },
   {
     quote:
-      "Fair pricing, professional communication, and the convenience of repairs in my driveway. It's the best automotive experience I've had in years.",
+      "Fair pricing, professional communication, and the convenience of repairs in my driveway. It’s the best automotive experience I’ve had in years.",
     name: "Leslie T.",
     detail: "Brake & suspension service",
   },
@@ -37,7 +37,7 @@ const milestones = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "About St. John's Auto Repair",
+  title: "About St. John’s Auto Repair",
   description:
     "Learn about Lindon J., the ASE-certified mobile mechanic serving drivers across Jacksonville, St. Augustine, and St. Johns County.",
 };
@@ -47,12 +47,12 @@ export default function AboutPage() {
     <section className="section" style={{ paddingTop: "6rem" }}>
       <div className="container" style={{ display: "grid", gap: "3rem" }}>
         <header className="stack" style={{ gap: "1rem", textAlign: "center" }}>
-          <span className="badge">About St. John's Auto Repair</span>
+          <span className="badge">About St. John’s Auto Repair</span>
           <h1 className="section__title" style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}>
             Local, mobile, and dedicated to keeping you rolling
           </h1>
           <p className="section__subtitle" style={{ margin: "0 auto", maxWidth: "50rem" }}>
-            St. John's Auto Repair is a fully mobile shop led by ASE-certified master technician Lindon J. We deliver dealership-level expertise with neighborly care to drivers throughout Jacksonville and St. Johns County.
+            St. John’s Auto Repair is a fully mobile shop led by ASE-certified master technician Lindon J. We deliver dealership-level expertise with neighborly care to drivers throughout Jacksonville and St. Johns County.
           </p>
         </header>
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="stack" style={{ gap: "0.75rem" }}>
               <h2 style={{ fontSize: "1.8rem" }}>Meet Lindon</h2>
               <p className="helper-text" style={{ fontSize: "1rem" }}>
-                Lindon started St. John's Auto Repair after more than a decade servicing domestic and import vehicles in dealership bays. He saw how often customers felt stranded by unexpected breakdowns, long waitlists, and unclear pricing. The solution: bring an expert technician and the right tools directly to you.
+                Lindon started St. John’s Auto Repair after more than a decade servicing domestic and import vehicles in dealership bays. He saw how often customers felt stranded by unexpected breakdowns, long waitlists, and unclear pricing. The solution: bring an expert technician and the right tools directly to you.
               </p>
             </div>
             <ul

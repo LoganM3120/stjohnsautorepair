@@ -59,7 +59,7 @@ const valueProps = [
   {
     title: "Mobile-first experience",
     description:
-      "SMS updates, photo reports, and secure online payments keep you in control even while you're on the go.",
+      "SMS updates, photo reports, and secure online payments keep you in control even while you’re on the go.",
     icon: "📱",
   },
 ] as const;
@@ -160,8 +160,8 @@ export default function HomePage() {
                 Roadside-ready service
               </h2>
               <p style={{ color: "rgba(226, 232, 240, 0.9)" }}>
-                Whether you're at home, at work, or stranded in a parking lot,
-                St. John's Auto Repair brings the shop to you with fully
+                Whether you’re at home, at work, or stranded in a parking lot,
+                St. John’s Auto Repair brings the shop to you with fully
                 equipped mobile diagnostics and repair tools.
               </p>
             </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
         >
           <div className="card" style={{ order: 2 }}>
             <h2 className="section__title" style={{ fontSize: "2rem" }}>
-              Why drivers choose St. John's Auto Repair
+              Why drivers choose St. John’s Auto Repair
             </h2>
             <div className="stack">
               {valueProps.map((value) => (

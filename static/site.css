@@ -861,6 +861,31 @@ fieldset.quote-form__field {
   width: 100%;
 }
 
+.quote-form__actions .button[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.quote-form__status {
+  min-height: 1.5rem;
+  margin-top: -0.25rem;
+  font-size: 0.95rem;
+  color: rgba(15, 23, 42, 0.7);
+}
+
+.quote-form__status[data-status="pending"] {
+  color: rgba(15, 23, 42, 0.65);
+}
+
+.quote-form__status[data-status="success"] {
+  color: #15803d;
+}
+
+.quote-form__status[data-status="error"] {
+  color: #dc2626;
+}
+
 @media (min-width: 640px) {
   .quote-modal__dialog {
     padding: 3rem 2.5rem 2.5rem;

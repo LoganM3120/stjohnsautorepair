@@ -36,9 +36,31 @@
     const otherInput = quoteModal.querySelector('[data-other-input]');
     const copyToggle = quoteModal.querySelector('[data-copy-toggle]');
     const copyInput = quoteModal.querySelector('[data-copy-input]');
+    const quoteForm = quoteModal.querySelector('.quote-form');
+    const statusNode = quoteModal.querySelector('[data-quote-status]');
+    const submitButton = quoteForm
+      ? quoteForm.querySelector('button[type="submit"]')
+      : null;
+    const defaultSubmitText =
+      submitButton && submitButton.textContent
+        ? submitButton.textContent
+        : 'Submit Request';
     const focusableSelectors =
       'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex="0"]';
     let lastFocusedElement = null;
+    const setStatus = (message, status) => {
+      if (!statusNode) {
+        return;
+      }
+
+      statusNode.textContent = message;
+
+      if (status) {
+        statusNode.setAttribute('data-status', status);
+      } else {
+        statusNode.removeAttribute('data-status');
+      }
+    };
 
     const openQuoteModal = () => {
       if (!quoteModal) return;
@@ -47,6 +69,11 @@
       quoteModal.setAttribute('data-open', 'true');
       quoteModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('quote-modal-open');
+      setStatus('', null);
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultSubmitText;
+      }
 
       const firstField = quoteModal.querySelector('[data-first-field]');
       window.setTimeout(() => {
@@ -152,6 +179,68 @@
         copyToggle.setAttribute('aria-pressed', String(nextState));
         copyToggle.classList.toggle('quote-form__toggle--active', nextState);
         copyInput.value = nextState ? 'yes' : 'no';
+      });
+    }
+
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        setStatus('Sending your request...', 'pending');
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+        }
+
+        const formData = new FormData(quoteForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch('/api/request-quote', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+          const result = await response
+            .json()
+            .catch(() => ({ message: 'Unable to send your request.' }));
+
+          if (!response.ok) {
+            const errorMessage =
+              result && typeof result.message === 'string' && result.message
+                ? result.message
+                : 'We could not send your request. Please try again later.';
+            throw new Error(errorMessage);
+          }
+
+          setStatus(
+            "Thanks! We've received your request and will reach out soon.",
+            'success'
+          );
+          quoteForm.reset();
+
+          if (copyToggle && copyInput) {
+            copyToggle.setAttribute('aria-pressed', 'false');
+            copyToggle.classList.remove('quote-form__toggle--active');
+            copyInput.value = 'no';
+          }
+
+          handleOtherFieldVisibility();
+        } catch (error) {
+          const message =
+            error instanceof Error && error.message
+              ? error.message
+              : 'We could not send your request. Please try again later.';
+          setStatus(message, 'error');
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = defaultSubmitText;
+          }
+        }
       });
     }
   }
