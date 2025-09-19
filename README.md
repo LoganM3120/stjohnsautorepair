@@ -10,6 +10,7 @@ npm run dev
 ```
 
 The development server will start on [http://localhost:3000](http://localhost:3000).
+The pages site will be seen here [https://loganm3120.github.io/stjohnsautorepair/]
 
 ## Available Scripts
 
