@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer__links">
           <Link to="/">Home</Link>
-          <Link to="/request-quote">Request a Quote</Link>
+          <Link to="/about">About</Link>
           <a href="tel:+19045551234">Call (904) 555-1234</a>
           <a href="mailto:service@stjohnsautorepair.com">
             service@stjohnsautorepair.com
