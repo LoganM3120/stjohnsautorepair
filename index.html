@@ -35,7 +35,9 @@
               >
               <a class="nav-link" href="about/">About</a>
             </nav>
-            <a class="button header__cta" href="about/">Request a Quote</a>
+            <button class="button header__cta" type="button" data-quote-trigger>
+              Request a Quote
+            </button>
           </div>
           <button
             type="button"
@@ -59,7 +61,9 @@
               >Home</a
             >
             <a class="nav-link nav-link--mobile" href="about/">About</a>
-            <a class="button" href="about/">Request a Quote</a>
+            <button class="button" type="button" data-quote-trigger>
+              Request a Quote
+            </button>
           </div>
         </div>
       </header>
@@ -81,7 +85,9 @@
                 times, transparent pricing, and guaranteed workmanship.
               </p>
               <div class="hero__actions">
-                <a class="button" href="about/">Request a Quote</a>
+                <button class="button" type="button" data-quote-trigger>
+                  Request a Quote
+                </button>
                 <a
                   class="button button--secondary"
                   href="tel:+19045551234"
@@ -288,6 +294,154 @@
           </p>
         </div>
       </footer>
+    </div>
+
+    <div
+      class="quote-modal"
+      data-quote-modal
+      data-open="false"
+      aria-hidden="true"
+    >
+      <button
+        type="button"
+        class="quote-modal__overlay"
+        data-quote-dismiss
+        tabindex="-1"
+        aria-label="Close request a quote form"
+      ></button>
+      <div
+        class="quote-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-modal-title"
+        aria-describedby="quote-modal-description"
+      >
+        <button
+          type="button"
+          class="quote-modal__close"
+          data-quote-dismiss
+          aria-label="Close request a quote form"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="quote-modal__content">
+          <h2 id="quote-modal-title">Request a Quote</h2>
+          <p
+            id="quote-modal-description"
+            class="quote-modal__subtitle helper-text"
+          >
+            Tell us about your vehicle and we'll follow up with a personalized
+            estimate.
+          </p>
+          <form class="quote-form">
+            <div class="quote-form__field">
+              <label for="quote-name">Full Name</label>
+              <input
+                id="quote-name"
+                name="full_name"
+                type="text"
+                autocomplete="name"
+                required
+                data-first-field
+              />
+            </div>
+            <div class="quote-form__field">
+              <label for="quote-email">Email</label>
+              <input
+                id="quote-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="quote-form__field">
+              <label for="quote-phone">Phone Number</label>
+              <input
+                id="quote-phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+            </div>
+            <div class="quote-form__field">
+              <label for="quote-vin">Vehicle Identification Number (VIN)</label>
+              <input id="quote-vin" name="vin" type="text" autocomplete="off" />
+            </div>
+            <div class="quote-form__field">
+              <label for="quote-concern"
+                >What is your concern about your vehicle?</label
+              >
+              <textarea
+                id="quote-concern"
+                name="concern"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <fieldset class="quote-form__field">
+              <legend>What is your preferred method of communication?</legend>
+              <div class="quote-form__radio-group">
+                <label class="quote-form__radio">
+                  <input
+                    type="radio"
+                    name="preferred_contact"
+                    value="email"
+                    checked
+                  />
+                  <span>Email</span>
+                </label>
+                <label class="quote-form__radio">
+                  <input
+                    type="radio"
+                    name="preferred_contact"
+                    value="phone"
+                  />
+                  <span>Phone</span>
+                </label>
+                <label class="quote-form__radio">
+                  <input
+                    type="radio"
+                    name="preferred_contact"
+                    value="other"
+                  />
+                  <span>Other</span>
+                </label>
+              </div>
+            </fieldset>
+            <div class="quote-form__field quote-form__field--nested" data-other-field hidden>
+              <label for="quote-contact-other">How should we reach you?</label>
+              <input
+                id="quote-contact-other"
+                name="preferred_contact_other"
+                type="text"
+                data-other-input
+                disabled
+              />
+            </div>
+            <div class="quote-form__field quote-form__field--inline">
+              <input
+                type="hidden"
+                name="send_copy"
+                value="no"
+                data-copy-input
+              />
+              <button
+                type="button"
+                class="quote-form__toggle"
+                data-copy-toggle
+                aria-pressed="false"
+              >
+                Send me a copy of my responses
+              </button>
+            </div>
+            <div class="quote-form__actions">
+              <button type="submit" class="button">Submit Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
