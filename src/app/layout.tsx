@@ -11,7 +11,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "St. John's Auto Repair | Mobile Mechanic in Jacksonville, FL",
+  title: "St. John’s Auto Repair | Mobile Mechanic in Jacksonville, FL",
   description:
     "ASE-certified mobile mechanic providing diagnostics, repairs, and preventative maintenance across Jacksonville and St. Johns County.",
 };

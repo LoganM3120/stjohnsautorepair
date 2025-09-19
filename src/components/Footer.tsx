@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__content">
         <div className="footer__brand">
-          St. John's Auto Repair
+          St. John’s Auto Repair
           <p className="helper-text" style={{ color: "#cbd5f5", marginTop: "0.5rem" }}>
             Keeping Jacksonville drivers safely on the road.
           </p>
@@ -14,12 +14,12 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <a href="tel:+19048273869">Call +1 (904) 827-3869</a>
-          <a href="mailto:service@stjohnsautorepair.com">
-            service@stjohnsautorepair.com
+          <a href="mailto:saintjohnsautorepair@gmail.com">
+            saintjohnsautorepair@gmail.com
           </a>
         </div>
         <p className="footer__note">
-          &copy; {new Date().getFullYear()} St. John's Auto Repair. All rights
+          &copy; {new Date().getFullYear()} St. John’s Auto Repair. All rights
           reserved.
         </p>
       </div>

@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -62,11 +63,11 @@ export default function Header() {
           href="/"
           onClick={closeMenu}
           style={{ display: "flex", alignItems: "center" }}
-          aria-label="St. John's Auto Repair home"
+          aria-label="St. John’s Auto Repair home"
         >
           <img
             src="/images/saint_johns_logo_nav.png"
-            alt="St. John's Auto Repair"
+            alt="St. John’s Auto Repair"
             style={{ height: "4.5rem", width: "auto" }}
           />
         </Link>
