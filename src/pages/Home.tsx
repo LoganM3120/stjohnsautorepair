@@ -23,7 +23,7 @@ const Home: React.FC = () => {
               times, transparent pricing, and guaranteed workmanship.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <Link to="/request-quote" className="button">
+              <Link to="/about" className="button">
                 Request a Quote
               </Link>
               <a
@@ -31,8 +31,8 @@ const Home: React.FC = () => {
                 href="tel:+19045551234"
                 style={{
                   background: "white",
-                  color: "var(--primary)",
-                  boxShadow: "inset 0 0 0 2px var(--primary)",
+                  color: "var(--accent)",
+                  boxShadow: "inset 0 0 0 2px var(--accent)",
                 }}
               >
                 Call (904) 555-1234
@@ -85,8 +85,8 @@ const Home: React.FC = () => {
             className="card"
             style={{
               background:
-                "linear-gradient(160deg, rgba(37, 99, 235, 0.15), rgba(15, 23, 42, 0.9))",
-              color: "white",
+                "linear-gradient(160deg, rgba(37, 99, 235, 0.2), rgba(30, 64, 175, 0.7))",
+              color: "#f8fafc",
               display: "flex",
               flexDirection: "column",
               gap: "1.5rem",
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
               <h2 style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>
                 Roadside-ready service
               </h2>
-              <p style={{ color: "rgba(226, 232, 240, 0.85)" }}>
+              <p style={{ color: "rgba(226, 232, 240, 0.9)" }}>
                 Whether you&apos;re at home, at work, or stranded in a parking
                 lot, St. John&apos;s Auto Repair brings the shop to you with
                 fully equipped mobile diagnostics and repair tools.
@@ -122,7 +122,7 @@ const Home: React.FC = () => {
                       width: "2.25rem",
                       height: "2.25rem",
                       borderRadius: "0.75rem",
-                      background: "rgba(248, 250, 252, 0.1)",
+                      background: "rgba(15, 23, 42, 0.2)",
                       display: "inline-flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -154,14 +154,14 @@ const Home: React.FC = () => {
             <span
               className="badge"
               style={{
-                background: "rgba(250, 204, 21, 0.15)",
-                color: "#facc15",
+                background: "rgba(148, 197, 255, 0.25)",
+                color: "#e0f2fe",
               }}
             >
               What we do
             </span>
             <h2 className="section__title">Full-service mobile mechanic</h2>
-            <p className="section__subtitle" style={{ color: "#cbd5f5" }}>
+            <p className="section__subtitle" style={{ color: "rgba(226, 232, 240, 0.85)" }}>
               From diagnostics to complex repairs, we deliver dealership-level
               expertise with the personal touch of a local mechanic.
             </p>
@@ -173,7 +173,8 @@ const Home: React.FC = () => {
                 key={service.title}
                 className="card"
                 style={{
-                  background: "rgba(15, 23, 42, 0.85)",
+                  background:
+                    "linear-gradient(155deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.35))",
                   color: "#f8fafc",
                 }}
               >
@@ -204,7 +205,7 @@ const Home: React.FC = () => {
                     <h3 style={{ fontSize: "1.3rem", marginBottom: "0.35rem" }}>
                       {service.title}
                     </h3>
-                    <p style={{ color: "#cbd5f5", fontSize: "0.95rem" }}>
+                    <p style={{ color: "rgba(226, 232, 240, 0.9)", fontSize: "0.95rem" }}>
                       {service.subtitle}
                     </p>
                   </div>
@@ -213,7 +214,7 @@ const Home: React.FC = () => {
                   style={{
                     display: "grid",
                     gap: "0.65rem",
-                    color: "#e2e8f0",
+                    color: "rgba(226, 232, 240, 0.9)",
                     paddingLeft: "1rem",
                   }}
                 >
@@ -293,7 +294,7 @@ const Home: React.FC = () => {
                 within hours. We bring factory-grade tools and OEM-quality parts
                 directly to you, eliminating the need for a tow.
               </p>
-              <Link to="/request-quote" className="button">
+              <Link to="/about" className="button">
                 Get a personalized repair plan
               </Link>
             </div>

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/request-quote", label: "Request a Quote" },
+  { to: "/about", label: "About" },
 ];
 
 const Header: React.FC = () => {
@@ -74,11 +74,11 @@ const Header: React.FC = () => {
           </nav>
 
           <Link
-            to="/request-quote"
+            to="/about"
             className="button nav--desktop"
             style={{ display: "none" }}
           >
-            Schedule Service
+            Request a Quote
           </Link>
         </div>
 
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
                 {link.label}
               </NavLink>
             ))}
-            <Link to="/request-quote" className="button" onClick={closeMenu}>
+            <Link to="/about" className="button" onClick={closeMenu}>
               Request a Quote
             </Link>
           </div>
