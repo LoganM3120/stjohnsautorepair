@@ -8,7 +8,7 @@ const Home: React.FC = () => {
         <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
           <div className="stack">
             <span className="badge">
-              Mobile Auto Care · Jacksonville &amp; St. Johns County
+              Mobile Auto Care · Jacksonville & St. Johns County
             </span>
             <h1
               className="section__title"
@@ -106,7 +106,7 @@ const Home: React.FC = () => {
               {[
                 "Advanced diagnostics",
                 "Preventative maintenance",
-                "Electrical &amp; mechanical repairs",
+                "Electrical & mechanical repairs",
                 "Fleet service partnerships",
               ].map((item) => (
                 <div
@@ -307,7 +307,7 @@ const Home: React.FC = () => {
 
 const serviceHighlights = [
   {
-    title: "Diagnostics &amp; Electrical",
+    title: "Diagnostics & Electrical",
     subtitle: "Pinpoint issues quickly with advanced scan tools",
     icon: "01",
     points: [
@@ -317,7 +317,7 @@ const serviceHighlights = [
     ],
   },
   {
-    title: "Engine &amp; Drivetrain",
+    title: "Engine & Drivetrain",
     subtitle: "Complete engine services without the shop wait times",
     icon: "02",
     points: [
@@ -327,7 +327,7 @@ const serviceHighlights = [
     ],
   },
   {
-    title: "Brakes &amp; Suspension",
+    title: "Brakes & Suspension",
     subtitle: "Stop safely with premium components and expert installation",
     icon: "03",
     points: [
@@ -337,7 +337,7 @@ const serviceHighlights = [
     ],
   },
   {
-    title: "Fleet &amp; Commercial",
+    title: "Fleet & Commercial",
     subtitle:
       "Keep your business vehicles on the road with flexible scheduling",
     icon: "04",
