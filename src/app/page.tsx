@@ -67,7 +67,7 @@ const valueProps = [
 export default function HomePage() {
   return (
     <div>
-      <section className="section" style={{ paddingTop: "5rem" }}>
+      <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
           <div className="stack">
             <span className="badge">
