@@ -247,6 +247,17 @@ main {
   gap: 1.5rem;
 }
 
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.header__cta {
+  display: none;
+}
+
 .header__inner {
   display: flex;
   align-items: center;
@@ -621,7 +632,15 @@ main {
 }
 
 @media (min-width: 768px) {
+  .header__actions {
+    display: flex;
+  }
+
   .nav--desktop {
+    display: inline-flex;
+  }
+
+  .header__cta {
     display: inline-flex;
   }
 
