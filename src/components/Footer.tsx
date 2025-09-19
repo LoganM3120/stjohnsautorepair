@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="footer__links">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <a href="tel:+19045551234">Call (904) 555-1234</a>
+          <a href="tel:+19048273869">Call +1 (904) 827-3869</a>
           <a href="mailto:service@stjohnsautorepair.com">
             service@stjohnsautorepair.com
           </a>

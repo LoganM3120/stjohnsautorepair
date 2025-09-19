@@ -153,7 +153,7 @@ export default function AboutPage() {
               <li>Quality parts sourced to match or exceed OEM specifications</li>
               <li>Service coverage across Jacksonville, St. Augustine, and beyond</li>
             </ul>
-            <a className="button" href="tel:+19045551234" style={{ alignSelf: "flex-start" }}>
+            <a className="button" href="tel:+19048273869" style={{ alignSelf: "flex-start" }}>
               Call to Request a Quote
             </a>
           </article>
