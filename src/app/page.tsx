@@ -91,14 +91,14 @@ export default function HomePage() {
               </Link>
               <a
                 className="button"
-                href="tel:+19045551234"
+                href="tel:+19048273869"
                 style={{
                   background: "white",
                   color: "var(--accent)",
                   boxShadow: "inset 0 0 0 2px var(--accent)",
                 }}
               >
-                Call (904) 555-1234
+                Call +1 (904) 827-3869
               </a>
             </div>
             <div style={{ display: "grid", gap: "1rem", marginTop: "1rem" }}>
