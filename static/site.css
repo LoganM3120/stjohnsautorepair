@@ -89,6 +89,11 @@ main {
   padding: 4rem 0;
 }
 
+.app-shell main > .section:first-of-type,
+.app-shell main > section:first-of-type {
+  padding-top: 2rem;
+}
+
 .section--dark {
   background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(15, 23, 42, 0.95));
   color: #e2e8f0;
@@ -337,7 +342,7 @@ main {
 }
 
 .hero {
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 .hero__grid {
